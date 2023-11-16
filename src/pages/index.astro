@@ -3,7 +3,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
 
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 
 const last_posts = posts.slice(0, 3);
 ---
@@ -11,55 +13,122 @@ const last_posts = posts.slice(0, 3);
 <BaseLayout sideBarActiveItemID="home">
   <div class="pb-12 mt-5">
     <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Manuel Ernesto</div>
-    <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>
+    <div class="text-5xl font-bold">I'm Max Hodges</div>
+    <div class="text-3xl py-3 font-bold">
+      Entrepreneurial Maker & Creative Technologist
+    </div>
     <div class="py-2">
       <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS.
-        Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed. I hope you find
-        it useful!
+        <p>
+          My work blends creative design and technical mastery, spanning diverse
+          mediums and industries.
+        </p>
       </text>
     </div>
-    <div class="mt-8">
-      <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
-      <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
-        Get This template
-      </a>
-    </div>
   </div>
+  <!-- <div class="mt-8">
+    <a class="btn" href="https://twitter.com/manuelernestog" target="_blank">
+      Let's connect!</a
+    >
+    <a
+      href="https://github.com/manuelernestog/astrofy"
+      target="_blank"
+      class="btn btn-outline ml-5"
+    >
+      Get This template
+    </a>
+  </div> -->
 
   <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+    <div class="text-3xl mt-6 w-full font-bold mb-2">Works</div>
   </div>
 
   <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
+    title="Japan Rabbit"
+    img="/japanrabbit-logo-256.png"
+    desc="Anyone, anywhere can buy from Japan. We’ll handle the ordering, payment, pickup, and shipping—so you don’t have to."
+    url="https://japanrabbit.com/"
+    badge=""
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    title="Blackship.com"
+    img="/blk_logotype_purple.png"
+    desc="Forward packages from Japan."
+    url="https://blackship.com/"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
+    title="Tokyo Realtime"
+    img="/trt_logo2.svg"
+    desc="Audio-guided tours reveal new sides to Tokyo’s most interesting neighborhoods. Due to COVID-19 restrictions on travel to Japan, we've made this project FREE thanks to the sponsorship of Japan Rabbit and Blackship. We hope you'll find these imaginative experiences of Tokyo informative and entertaining."
+    url="https://tokyorealtime.com/"
+    badge="FREE"
+    bg="#18182A"
   />
 
-  <div>
+  <div class="mt-3 text-2xl font-semibold">Clients and media coverage</div>
+  <div class="mt-3">
+    My work in photography, audio, and video production has been recognized and
+    featured by major media outlets such as BBC, CNN, and The Guardian.
+  </div>
+  <div class="">
+    <ul class="list-none space-y-1 mt-2"></ul>
+    <div tabindex="0" class="collapse -ml-4">
+      <input type="checkbox" />
+      <div class="collapse-title -mt-3 font-semibold">Show more...</div>
+      <div class="collapse-content">
+        <ul class="list-none space-y-1">
+          <li>BBC</li>
+          <li>CNN</li>
+          <li>Architecture Foundation of San Antonio</li>
+          <li>Boing Boing</li>
+          <li>Bunka Fashion Graduate University, Tokyo</li>
+          <li>Ceska Pozice (Czech Position)</li>
+          <li>Dazed and Confused</li>
+          <li>designboom</li>
+          <li>France Inter Radio (87.8 FM Paris)</li>
+          <li>German TV (NDR) – 80,000 Questions Around the World</li>
+          <li>German TV (RTL) – Extra</li>
+          <li>Guardian.co.uk</li>
+          <li>
+            Japanese Organization for International Cooperation in Family
+            Planning (JOICFP)
+          </li>
+          <li>JapaneseStreets.com</li>
+          <li>Japan National Tourism Organization</li>
+          <li>Japan Subculture Research Center</li>
+          <li>Kodansha</li>
+          <li>LinkedIn</li>
+          <li>Lufthansa Magazin</li>
+          <li>Metro.co.uk</li>
+          <li>Metropolis Magazine</li>
+          <li>New York Post</li>
+          <li>Oops! Japanese Magazine, Vancouver, BC</li>
+          <li>
+            Pecha Kucha – promotion for Global PechaKucha Day – Inspire Japan
+          </li>
+          <li>PingMag</li>
+          <li>Playboy</li>
+
+          <li>RESPEKT.cz</li>
+          <li>The Japan Times</li>
+          <li>
+            The New York Times<br /><i
+              >My photography work has graced the front page of the New York
+              Times — twice.</i
+            >
+            <li>Tokyo Kink Society</li>
+            <li>Tokyo Journal</li>
+            <li>WGSN</li>
+            <li>and other global media publications.</li>
+          </li>
+
+          <!-- <div>
     <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
-  </div>
+  </div> -->
 
-  {
+          <!-- {
     last_posts.map((post) => (
       <>
         <HorizontalCard
@@ -73,5 +142,9 @@ const last_posts = posts.slice(0, 3);
         <div class="divider my-0" />
       </>
     ))
-  }
+  } -->
+        </ul>
+      </div>
+    </div>
+  </div>
 </BaseLayout>
